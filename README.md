@@ -18,65 +18,72 @@
 
 ## 🌟 Recursos / Features
 
-- ⚡ **Language Server Protocol (LSP):** Powered by the standalone [pawnforge-lsp](https://github.com/NiceFeatures/pawnforge-lsp) core engine via **NppLspClient**.
-- 💡 **Intelligent Autocomplete (`Ctrl + Space`):** Complete prototype parameters and rich inline documentation for AMX Mod X 1.8.2 / 1.9 / 1.10 and **ReAPI**.
-- 🎯 **Go to Definition (`Alt + G` / `F12`):** Jump instantly to any native, stock, macro, or function across all your `.sma` and `.inc` includes.
-- 🔍 **Find References (`Alt + Shift + G`):** Find all symbols and callback usages across files.
-- 🎨 **Modern Dual-Theme UDL (User Defined Language):**
-  - **Dark Mode:** Modern palette inspired by VS Code Dark+ and PawnForge (custom colors for tags `Float:`, `bool:`, ReAPI enums, preprocessors).
-  - **Light Mode:** High-contrast crisp styling for standard Notepad++ light theme.
-  - Switches automatically when toggling Dark Mode in Notepad++!
-- 🔨 **1-Click Compilation (`F6`):** Fast build integration via **NppExec** with clickable error lines (double-click in the console jumps directly to the line in your source code).
+- ⚡ **Language Server Protocol (LSP):** Powered by the standalone [pawnforge-lsp](https://github.com/NiceFeatures/pawnforge-lsp) core engine (iniciado automaticamente via **NppLspClient** v0.0.40 x64).
+- 💡 **Hover & Documentation:** Passe o cursor sobre qualquer função, macro ou constante AMXX / ReAPI para ver sua documentação completa e parâmetros com formatação Markdown via WebView2.
+- 🔍 **Navegação & Go to Definition:** Pule direto para declarações e funções via clique direito no editor ou atalhos de teclado.
+- 🎨 **Sintaxe Moderna com Modo Escuro Automático:**
+  - **Dark Mode:** Paleta moderna inspirada no VS Code Dark+ e PawnForge (cores personalizadas para tags `Float:`, `bool:`, enums ReAPI, pré-processadores).
+  - **Light Mode:** Visual limpo e de alto contraste para o tema claro do Notepad++.
+  - Alterna automaticamente ao ligar o Modo Escuro no Notepad++!
+- 🔨 **Compilação em 1 Clique (`F6` / `Ctrl + F6`):** Integração rápida via **NppExec** com salto direto para linhas de erro (ao dar duplo-clique no erro do console, o Notepad++ salta diretamente para a linha no código-fonte).
 
 ---
 
 ## 🚀 Instalação Rápida / Quick Installation (1 Minuto)
 
 1. Baixe o arquivo **`pawnforge-npp-vX.Y.Z.zip`** na aba [Releases](https://github.com/NiceFeatures/pawnforge-npp/releases).
-2. Extraia o conteúdo diretamente na pasta do Notepad++:
+2. Extraia o conteúdo diretamente no diretório do Notepad++:
    - **Instalação Padrão (Recomendado):**  
-     Extraia dentro de `%APPDATA%\Notepad++` ou em `C:\Program Files\Notepad++`
+     Copie as pastas `plugins`, `userDefineLangs`, `contextMenu.xml` para `%APPDATA%\Notepad++` e o arquivo `bin\pawnforge-lsp.exe` para `C:\Program Files\Notepad++\`.
    - **Notepad++ Portable:**  
-     Extraia diretamente na raiz da pasta do seu Notepad++ Portable.
-3. Abra ou reinicie o Notepad++. Pronto!
-
-> ℹ️ **Estrutura extraída:**
-> ```text
-> Notepad++/
-> ├── bin/
-> │   └── pawnforge-lsp.exe        (Servidor LSP standalone)
-> ├── userDefineLangs/
-> │   ├── Pawn_Dark.udl.xml        (Sintaxe moderna Dark Mode)
-> │   └── Pawn_Light.udl.xml       (Sintaxe clássica Light Mode)
-> └── plugins/
->     ├── NppLspClient/           (Plugin LSP para Notepad++)
->     ├── NppExec/                (Plugin de compilação 1-clique)
->     └── Config/                 (Configurações pré-definidas)
-> ```
+     Extraia todos os arquivos diretamente na pasta raiz do seu Notepad++ Portable.
+3. Abra ou reinicie o Notepad++. O servidor LSP iniciará automaticamente para arquivos `.sma` e `.inc`!
 
 ---
 
-## ⌨️ Atalhos do Teclado / Keyboard Shortcuts
+## 🌙 Como Ativar o Modo Escuro (Dark Mode)
+
+1. No menu superior do Notepad++, acesse:
+   **Configurações** (`Settings`) ➔ **Preferências...** (`Preferences...`) ➔ **Modo Escuro** (`Dark Mode`).
+2. Marque a caixa **Ativar modo escuro** (`Enable dark mode`).
+3. Clique em **Fechar**.
+4. O tema Pawn mudará instantaneamente para a sintaxe escura moderna!
+
+---
+
+## 🔨 Onde e Como Compilar (`amxxpc`)
+
+A compilação é gerenciada pelo plugin **NppExec**:
+- Pressione **`F6`**: abre a janela de execução com o script `Compile AMXX` já selecionado. Basta pressionar **Enter** (ou clicar em **OK**).
+- Pressione **`Ctrl + F6`**: recompila imediatamente o arquivo atual sem nem abrir a janela de diálogo!
+- Ou acesse pelo menu: **Plugins** ➔ **NppExec** ➔ **Execute NppExec Script...**.
+- O console abre na parte inferior com as mensagens do compilador.
+- **Dica:** Dê um **duplo clique** em qualquer linha de erro no console para que o Notepad++ vá instantaneamente até a linha exata no seu `.sma`!
+
+---
+
+## 🔍 Como Navegar (Ir para Definição)
+
+> 💡 **Nota sobre `Ctrl + Clique`:**  
+> No Notepad++ (motor Scintilla), o atalho `Ctrl + Clique` é nativamente reservado para **seleção com múltiplos cursores** e não pode ser interceptado por plugins.  
+> Por isso, a navegação para a definição é feita de duas maneiras muito fáceis:
+
+1. **Pelo Botão Direito (Menu de Contexto):**
+   - Clique com o botão direito sobre o nome de qualquer função ou variável e selecione **`Ir para Definição (Go to Definition)`**!
+2. **Pelo Teclado:**
+   - Use o atalho **`Alt + G`** ou configure **`F12`** em *Configurações ➔ Atalhos... ➔ Comandos de plug-in ➔ NppLspClient ➔ Goto definition*.
+
+---
+
+## ⌨️ Atalhos Úteis
 
 | Atalho / Shortcut | Ação / Action | Descrição |
 | :--- | :--- | :--- |
-| **`Ctrl + Espaço`** | **Autocomplete** | Sugestões com documentação de nativas AMXX e ReAPI |
-| **`Alt + G`** ou **`F12`** | **Go to Definition** | Pula instantaneamente para a declaração/função |
-| **`Alt + Shift + G`** | **Find References** | Lista todas as referências do símbolo selecionado |
-| **`F6`** | **Compilar Plugin (`amxxpc`)** | Executa a compilação do arquivo `.sma` ativo |
-| **Duplo-clique no erro** | **Navegar para o Erro** | No console do Notepad++, dá duplo clique para ir à linha |
-
----
-
-## ⚙️ Configuração do Compilador (`amxxpc.exe`)
-
-O script de compilação (`F6`) já vem configurado para o compilador padrão no Desktop (`compiler\amxxpc.exe`).
-
-Caso seu compilador esteja em outro diretório:
-1. No Notepad++, pressione **`F6`**.
-2. No menu suspenso, selecione **`Compile AMXX`**.
-3. Ajuste o caminho do `amxxpc.exe` para a pasta do seu servidor / compilador.
-4. Clique em **`Save`** e em **`OK`**.
+| **`Ctrl + Espaço`** | **Autocomplete** | Exibe nativas, constantes e assinaturas AMXX / ReAPI |
+| **Botão Direito ➔ Ir para Definição** | **Go to Definition** | Pula para a definição/declaração da função |
+| **`F6`** | **Compilar Plugin (`amxxpc`)** | Abre o diálogo para compilar o arquivo `.sma` atual |
+| **`Ctrl + F6`** | **Recompilar Imediato** | Executa a última compilação sem exibir diálogo |
+| **Duplo-clique no erro** | **Saltar para o Erro** | Salta direto para a linha do erro no arquivo fonte |
 
 ---
 

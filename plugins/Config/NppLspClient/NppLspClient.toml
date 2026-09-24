@@ -1,0 +1,315 @@
+[general]
+# The indicator IDs defined here are fallback values in case NPPM_ALLOCATEINDICATOR fails.
+diag_indicator_id = 12  # Indicator used to draw the squiggle lines
+highlight_indicator_id = 13  # Indicator used to highlights all references to the symbol scoped to this file
+highlight_indicator_color = 0x64e0ff  # value must be in the range 0 - 0xffffff
+
+# Define only if themes default fore- and background colors should be replaced
+# calltip_foreground_color =   # value must be in the range 0 - 0xffffff
+# calltip_background_color =   # value must be in the range 0 - 0xffffff
+
+# When both Npps and Lsps completion dialogs are used, this setting determines whether
+#  the Lsp completion dialog closes the Npp dialog and displays its own data.
+#  Possible values are true or false(Default).
+# complete_always =
+
+# NOTE THAT ENABLING LOGGING HAS A MASSIVE IMPACT ON OVERALL PERFORMANCE AND SHOULD ONLY BE USED IF NECESSARY.
+enable_logging = false  # value must be either false(Default) or true
+
+# The following settings can be used to disable the corresponding lsp requests for all configured servers.
+#  Possible values are true or false(Default).
+# disable_completion_request =
+# disable_signature_request =
+# disable_symbol_request =
+
+
+# #########################################################
+# DIALOG SETTINGS
+
+# Each dialog has the same 4 key-value pairs, foreground_color, background_color, font_name and font_size,
+# which, if not set, are inherited from the default style used, in addition,
+# the Scinitilla-based dialogs, currently all dockable dialogs, have the option selected_text_color,
+# which is inherited from the npp default setting.
+# All others are dialog-specific options that have predefined values,
+# which of course will not work with all possible themes.
+
+# The values for the WHATEVER_colors must be an integer in the range 0 - 16777215 (0xffffff).
+#   The notation is either pure digits or a hex notation starting with 0x
+#   and in BGR order like expected by scintilla
+
+# The font_name is a string enclosed in quotation marks such as "Courier New" or "Arial".
+
+# The font_size must be a meaningful integer value.
+
+[console_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+# selected_text_color =
+
+# error_color =
+# warning_color =
+# incoming_color =
+# outgoing_color =
+
+
+[diagnostics_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+# selected_text_color =
+# # The default style for line numbers is set to the highest diagnostic level.
+# #  Note that this does not indicate that there is an error in the current file,
+# #   but rather that there is a diganostic information for a file.
+# #   It is reset when the buffer is changed or when there are no more pending diagnostic messages.
+# use_line_number_indicator = false  # value must be either false or true (default)
+
+# error_color =
+# warning_color =
+# info_color =
+# hint_color =
+
+
+[references_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+# selected_text_color =
+
+# filename_color =
+# found_location_color =
+# reference_color =
+# # Determines whether the dialog is cleared beforehand for each reference request
+# clear_reference_view_always = false  # value must be either false (default) or true
+# # Determines whether to start again from the beginning after reaching the last position
+# rotate_when_jumping = false  # value must be either false (default) or true
+
+
+[symbols_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+# selected_text_color =
+
+# # The possible colors for the LSP defined symbols
+# file_color =
+# module_color =
+# namespace_color =
+# package_color =
+# class_color =
+# method_color =
+# property_color =
+# field_color =
+# constructor_color =
+# enum_color =
+# interface_color =
+# function_color =
+# variable_color =
+# constant_color =
+# string_color =
+# number_color =
+# boolean_color =
+# array_color =
+# object_color =
+# key_color =
+# null_color =
+# enum_member_color =
+# struct_color =
+# event_color =
+# operator_color =
+# type_parameter_color =
+
+# # The value configured here applies to all configured language servers,
+# # but can be overwritten by a defined symbol_filter in a section of the language server configuration.
+# # A non-configured symbol_filter means that all or the filter defined here should be displayed.
+# symbol_filter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+
+# # Use the inplace dialog instead of the standard docked dialog
+# use_inplace_dialog = false
+
+
+[rename_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+
+# # Specifies whether the current word is the default text in the rename dialog.
+# auto_add_symbol = false  # The value must be either false (default) or true.
+
+
+[popup_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+
+# # An integer value that specifies how many seconds the dialog is visible
+# timeout = 5  # default
+
+
+[action_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+
+
+[hover_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+
+
+# [calltip_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+
+
+[completion_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+# # Use the plugin completion dialog instead of the one provided by Scintilla.
+# #  Possible values are true or false(Default).
+# use_plugin_dialog =
+
+
+[callhierarchy_dialog]
+# foreground_color =
+# background_color =
+# font_name =
+# font_size =
+# selected_text_color =
+
+# filename_color =
+# found_location_color =
+# reference_color =
+# # Determines whether the dialog is cleared beforehand for each call hierarchy request
+# clear_call_hierarchy_view_always = false  # value must be either false (default) or true
+
+
+# #########################################################
+# LANGUAGE SERVER SETTINGS
+
+# Each configured lanugage server needs to start with a section called
+# [lspservers.NAME_OF_THE_LANGUAGE_SERVER] eg. [lspservers.python]
+# the NAME_OF_THE_LANGUAGE_SERVER must be the same as displayed in the language menu
+# if the name contains non-alphabetic letters like C++, then it needs to be encased in double quotes like
+# [lspservers."c++"]
+
+# The following server attributes can be set
+# mode - io, tcp or pipe; value encased in a double quotes.
+# e.g.  mode = "io"
+
+# executable - the full path to the language server executable encased in SINGLE quotes.
+# e.g.  executable = 'D:\\ProgramData\\Python\\Python38_64\\Scripts\\pylsp.exe'
+
+# args - arguments passed to the language server executable encased in SINGLE quotes.
+# e.g.  args = '--check-parent-process --log-file D:\\log.txt -vvv'
+
+# env - Additional lsp server process environment variables provided as toml inline table.
+# e.g.  env = {RA_LOG = 'lsp_server=trace', RA_LOG_FILE = 'd:\\rust-analyzer.txt'}
+
+# auto_start_server - true or false; Indicates whether the language server will be started automatically when a corresponding document gets opened.
+# NOTE: currently only false should be used
+# e.g.  auto_start_server = false
+
+# port - this is only effictive and needed if mode is set to tcp and should be an integer
+# consult your language server documentation which port should be used or how to configure it.
+# e.g. port = 12345
+
+# host - this is only effictive and needed if mode is set to tcp and should be the ip address of the host running the language server
+# If language server and client are running on the same host, then 127.0.0.1 might be a good choice.
+# e.g. host = 127.0.0.1
+
+# pipe - this is only effictive and needed if mode is set to pipe and should be an string
+# consult your language server documentation how this should be used or how to configure it.
+
+
+# initialization_options - json string; Please check the server documentation to see whether this is supported and,
+#  if so, which values can be set.
+#  e.g. the rust-analyzer allows to limit to completion suggestion with something like
+
+# initialization_options = '{"completion":{"limit": 1000}}'
+
+# or as a multiline definition
+
+# initialization_options = '''{
+# "completion":{
+#   "limit": 1000
+#  }
+# }'''
+
+# workspace_configuration - json string; Please check the server documentation to see whether this is supported and, if so, which values can be set.
+#  The value is used in both the DidChangeConfiguration notification and the workspace/configuration request.
+#   e.g. the intelephense server allows to load additional stubs with something like
+
+# workspace_configuration = '''{
+# 	"intelephense": {
+# 		"stubs": [
+#             "apache", "bcmath", "bz2", "calendar", "com_dotnet", "Core", "ctype", "curl", "date", "dba", "dom", "enchant", "exif", "FFI", "fileinfo", "filter", "fpm", "ftp", "gd", "gettext", "gmp", "hash", "iconv", "imap", "intl", "json", "ldap", "libxml", "mbstring", "meta", "mysqli", "oci8", "odbc", "openssl", "pcntl", "pcre", "PDO", "pgsql", "Phar", "posix", "pspell", "random", "readline", "Reflection", "session", "shmop", "SimpleXML", "snmp", "soap", "sockets", "sodium", "SPL", "sqlite3", "standard", "superglobals", "sysvmsg", "sysvsem", "sysvshm", "tidy", "tokenizer", "uri", "xml", "xmlreader", "xmlrpc", "xmlwriter", "xsl", "Zend OPcache", "zip", "zlib", "wordpress"
+# 		]
+# 	}
+# }'''
+
+# The following settings can be used to enable or disable the corresponding lsp requests for the configured server.
+#  If no corresponding settings have been made in either the general section or the server section,
+#   a corresponding request is sent by default.
+#  Possible values are true or false(Default).
+# disable_completion_request =
+# disable_signature_request =
+# disable_symbol_request =
+# disable_progress_popups =
+
+
+# request_diagnostics - possible values are 0, 1 and 2
+# It is possible that a language server does not implement diagnostic notifications,
+#  but does implement diagnostic requests.
+# 0 = deactivated, no request is sent (default)
+# 1 = on_save, a request is only sent to the server if the current buffer is saved
+# 2 = on_modify, every text change triggers a diagnostic request
+# e.g. request_diagnostics = 0
+
+
+# In the following examples WHATEVER_DIRECTORY must be replaced by the complete concrete path in each case.
+# Some examples can also be found at https://github.com/Ekopalypse/NppLspClient/blob/main/tips.md#known-working-language-servers-and-their-sample-configuration-in-alphabetical-order
+
+# language server configuration example for io mode
+# [lspservers.python]
+# mode = "io"
+# executable = 'WHATEVER_DIRECTORY\\pylsp.exe'
+# args = '--check-parent-process --log-file WHATEVER_DIRECTORY\\log.txt -vvv'
+# auto_start_server = false
+
+# language server configuration example for tcp mode
+# [lspservers.python]
+# mode = "tcp"
+# executable = 'WHATEVER_DIRECTORY\\pylsp.exe'
+# args = '--tcp --host 127.0.0.1 --port 12345 --check-parent-process --log-file WHATEVER_DIRECTORY\\log.txt -vvv'
+# port = 12345
+# host = "127.0.0.1"
+# auto_start_server = false
+
+# language server configuration example with initialization_options and additional environment variables
+# [lspservers.rust]
+# mode = "io"
+# executable = 'WHATEVER_DIRECTORY\\rust-analyzer.exe'
+# env = {RA_LOG = 'lsp_server=trace', RA_LOG_FILE = 'WHATEVER_DIRECTORY\\rust-analyzer.txt'}
+# auto_start_server = false
+# initialization_options = '{"completion":{"limit": 1000}}'
+
+# PawnForge LSP Servers
+[lspservers.pawn]
+mode = "io"
+executable = 'C:\Program Files\Notepad++\pawnforge-lsp.exe'
+args = '--stdio'
+auto_start_server = true
