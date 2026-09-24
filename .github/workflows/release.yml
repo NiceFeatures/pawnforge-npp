@@ -1,0 +1,41 @@
+name: Build & Release PawnForge for Notepad++
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Extract Tag Name
+        id: tag
+        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $env:GITHUB_OUTPUT
+        shell: bash
+
+      - name: Download Standalone pawnforge-lsp Binary
+        run: |
+          New-Item -ItemType Directory -Force -Path "bin"
+          Invoke-WebRequest -Uri "https://github.com/NiceFeatures/pawnforge-lsp/releases/download/v1.0.1/pawnforge-lsp.exe" -OutFile "bin/pawnforge-lsp.exe"
+
+      - name: Package Release ZIP
+        run: |
+          $ver = "${{ steps.tag.outputs.TAG_NAME }}"
+          $zipName = "pawnforge-npp-$ver.zip"
+          Compress-Archive -Path "bin", "plugins", "userDefineLangs", "README.md", "LICENSE.txt" -DestinationPath $zipName -Force
+          echo "ZIP_NAME=$zipName" >> $env:GITHUB_ENV
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ZIP_NAME }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true

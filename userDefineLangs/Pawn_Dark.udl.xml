@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+PawnForge UDL for Notepad++ (Dark Theme)
+Inspired by VS Code Dark+ & PawnForge Color Scheme
+Compatible with AMX Mod X 1.10 and ReAPI
+-->
+<NotepadPlus>
+    <UserLang name="Pawn" ext="sma inc pwn" darkModeTheme="yes" udlVersion="2.1">
+        <Settings>
+            <Global caseIgnored="no" allowFoldOfComments="yes" foldCompact="no" forcePureLC="0" decimalSeparator="0" />
+            <Prefix Keywords1="no" Keywords2="no" Keywords3="yes" Keywords4="no" Keywords5="no" Keywords6="no" Keywords7="no" Keywords8="no" />
+        </Settings>
+        <KeywordLists>
+            <Keywords name="Comments">1// 2/* 0*/</Keywords>
+            <Keywords name="Numbers, prefix1">0x 0X</Keywords>
+            <Keywords name="Numbers, prefix2">0b 0B</Keywords>
+            <Keywords name="Numbers, extras1"></Keywords>
+            <Keywords name="Numbers, extras2"></Keywords>
+            <Keywords name="Numbers, suffix1"></Keywords>
+            <Keywords name="Numbers, suffix2"></Keywords>
+            <Keywords name="Numbers, range"></Keywords>
+            <Keywords name="Operators1">+ - * / % = ! &amp; | ^ ~ &lt; &gt; : ? , ; .</Keywords>
+            <Keywords name="Operators2">== != &lt;= &gt;= &amp;&amp; || ++ -- += -= *= /= %= &amp;= |= ^= &lt;&lt; &gt;&gt; &lt;&lt;= &gt;&gt;=</Keywords>
+            <Keywords name="Folders in code1, open">{</Keywords>
+            <Keywords name="Folders in code1, middle"></Keywords>
+            <Keywords name="Folders in code1, close">}</Keywords>
+            <Keywords name="Folders in code2, open"></Keywords>
+            <Keywords name="Folders in code2, middle"></Keywords>
+            <Keywords name="Folders in code2, close"></Keywords>
+            <Keywords name="Folders in comment, open">/*</Keywords>
+            <Keywords name="Folders in comment, middle"></Keywords>
+            <Keywords name="Folders in comment, close">*/</Keywords>
+            <Keywords name="Keywords1">assert break case continue default do else enum for forward goto if native new operator public return sizeof static stock struct switch typeof while __emit</Keywords>
+            <Keywords name="Keywords2">Float: bool: any: String: File: Trie: Array: Regex: HamHook: Handle: cell:</Keywords>
+            <Keywords name="Keywords3">#assert #define #else #elseif #elif #endif #endinput #file #if #include #line #pragma #tryinclude #undef</Keywords>
+            <Keywords name="Keywords4">PLUGIN_CONTINUE PLUGIN_HANDLED PLUGIN_HANDLED_MAIN PLUGIN_STOP HC_CONTINUE HC_SUPERCEDE HC_BREAK ATTACH_NORM ATTACH_ORIGIN ATTACH_ANGLES ATTACH_FORWARD DONT_BLEED NORMAL_TRACE ALL_WEAPONS FORCE_UNMODIFIED FORCE_EXACTFILE HAM_IGNORED HAM_HANDLED HAM_OVERRIDE FMRES_IGNORED FMRES_HANDLED FMRES_OVERRIDE FMRES_SUPERCEDE true false null charsmax charsmin EOS</Keywords>
+            <Keywords name="Keywords5">rg_create_entity rg_find_ent_by_class rg_find_ent_by_owner rg_give_item rg_give_custom_item rg_set_user_armor rg_set_user_bpammo rg_set_user_footsteps rg_reset_user_model rg_set_user_model rg_get_user_team rg_set_user_team rg_round_end rg_restart_round rg_send_bartime rg_drop_items rg_has_user_shield rg_give_shield rg_is_user_shield rg_switch_weapon rg_is_bomb_planted register_plugin register_clcmd register_concmd register_cvar register_event register_logevent register_message register_native register_forward set_task remove_task client_print console_print server_print client_cmd server_cmd set_hudmessage show_hudmessage show_motd menu_create menu_additem menu_display menu_destroy</Keywords>
+            <Keywords name="Keywords6"></Keywords>
+            <Keywords name="Keywords7"></Keywords>
+            <Keywords name="Keywords8"></Keywords>
+            <Keywords name="Delimiters">00" 01^ 01\ 02" 00' 01^ 01\ 02'</Keywords>
+        </KeywordLists>
+        <Styles>
+            <WordsStyle name="DEFAULT" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="COMMENTS" fgColor="6A9955" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="2" nesting="0" />
+            <WordsStyle name="LINE COMMENTS" fgColor="6A9955" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="2" nesting="0" />
+            <WordsStyle name="NUMBERS" fgColor="B5CEA8" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS1" fgColor="569CD6" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS2" fgColor="4EC9B0" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS3" fgColor="C586C0" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS4" fgColor="4FC1FF" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS5" fgColor="DCDCAA" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS6" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS7" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS8" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="OPERATORS" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE1" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE2" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN COMMENT" fgColor="6A9955" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="2" nesting="0" />
+            <WordsStyle name="DELIMITERS1" fgColor="CE9178" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS2" fgColor="D7BA7D" bgColor="1E1E1E" colorStyle="1" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS3" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS4" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS5" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS6" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS7" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS8" fgColor="D4D4D4" bgColor="1E1E1E" colorStyle="0" fontName="" fontStyle="0" nesting="0" />
+        </Styles>
+    </UserLang>
+</NotepadPlus>

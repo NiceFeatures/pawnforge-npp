@@ -1,0 +1,6 @@
+::Compile AMXX
+// Save active file
+NPP_SAVE
+// Compile via AMX Mod X compiler (amxxpc.exe) with -d2 debug flag
+cd "$(CURRENT_DIRECTORY)"
+"C:\Users\iceeedR\Desktop\compiler\amxxpc.exe" "$(FILE_NAME)" -o"$(CURRENT_DIRECTORY)\$(NAME_PART).amxx" -i"$(CURRENT_DIRECTORY)\include" -d2
