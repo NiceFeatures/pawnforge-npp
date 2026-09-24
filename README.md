@@ -34,12 +34,39 @@
 1. Baixe o arquivo **`pawnforge-npp-vX.Y.Z.zip`** na aba [Releases](https://github.com/NiceFeatures/pawnforge-npp/releases).
 2. Extraia o conteúdo diretamente no diretório do Notepad++:
    - **Instalação Padrão (Recomendado):**  
-     Copie as pastas `plugins`, `userDefineLangs`, `contextMenu.xml` para `%APPDATA%\Notepad++` e o arquivo `bin\pawnforge-lsp.exe` para `C:\Program Files\Notepad++\`.
+     1. Copie as pastas `plugins`, `userDefineLangs` e o arquivo `contextMenu.xml` para `%APPDATA%\Notepad++\`.  
+     2. Copie o executável `bin\pawnforge-lsp.exe` para `C:\Program Files\Notepad++\`.  
+     3. Copie a pasta `autoCompletion\pawn.xml` para `C:\Program Files\Notepad++\autoCompletion\pawn.xml`.
    - **Notepad++ Portable:**  
      Extraia todos os arquivos diretamente na pasta raiz do seu Notepad++ Portable.
 3. Abra ou reinicie o Notepad++. O servidor LSP iniciará automaticamente para arquivos `.sma` e `.inc`!
 
 ---
+
+
+
+---
+
+## ⚡ Autocomplete Nativo e Dicas de Parâmetros
+
+O PawnForge inclui uma biblioteca nativa (`autoCompletion/pawn.xml`) com mais de **6.800 funções AMX Mod X e ReAPI**:
+
+1. No menu superior do Notepad++, acesse:
+   **Configurações** (`Settings`) ➔ **Preferências...** (`Preferences...`) ➔ **Autocompletar** (`Auto-Completion`).
+2. Marque as duas opções recomendadas:
+   - **`[x] Habilitar autocompletar para cada entrada`** (Selecione *Completar função e palavra*, a partir do 3º caractere).
+   - **`[x] Mostrar dica de parâmetro a cada entrada`** (Exibe os parâmetros oficiais ao abrir parênteses `(`).
+3. Clique em **Fechar**.
+
+---
+
+## 🔍 Como Navegar no Código (Go to Definition)
+
+- **Via Botão Direito:** Clique com o botão direito do mouse sobre qualquer função/constante ➔ **Ir para Definição (Go to Definition)**.
+- **Via Atalho de Teclado (F12):**
+  1. Vá em **Configurações** ➔ **Atalhos...** (`Shortcut Mapper`) ➔ aba **Comandos de plug-in** (`Plugin commands`).
+  2. Localize **NppLspClient** ➔ **Goto definition**.
+  3. Clique em **Modificar** e atribua a tecla **`F12`** (ou seu atalho favorito).
 
 ## 🌙 Como Ativar o Modo Escuro (Dark Mode)
 
