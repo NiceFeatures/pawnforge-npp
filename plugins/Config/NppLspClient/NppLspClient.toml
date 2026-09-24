@@ -11,7 +11,7 @@ calltip_background_color = 0x252526
 # When both Npps and Lsps completion dialogs are used, this setting determines whether
 #  the Lsp completion dialog closes the Npp dialog and displays its own data.
 #  Possible values are true or false(Default).
-# complete_always =
+complete_always = false
 
 # NOTE THAT ENABLING LOGGING HAS A MASSIVE IMPACT ON OVERALL PERFORMANCE AND SHOULD ONLY BE USED IF NECESSARY.
 enable_logging = false  # value must be either false(Default) or true
@@ -163,15 +163,9 @@ enable_logging = false  # value must be either false(Default) or true
 foreground_color = 0xd4d4d4
 background_color = 0x252526
 [completion_dialog]
-# foreground_color =
-# background_color =
-# font_name =
-# font_size =
-# # Use the plugin completion dialog instead of the one provided by Scintilla.
-# #  Possible values are true or false(Default).
-# use_plugin_dialog =
-
-
+foreground_color = 0xd4d4d4
+background_color = 0x252526
+use_plugin_dialog = true
 [callhierarchy_dialog]
 # foreground_color =
 # background_color =
@@ -298,6 +292,8 @@ background_color = 0x252526
 
 # PawnForge LSP Servers
 [lspservers.pawn]
+disable_completion_request = true
+complete_always = false
 mode = "io"
 executable = 'C:\Program Files\Notepad++\pawnforge-lsp.exe'
 args = '--stdio'
